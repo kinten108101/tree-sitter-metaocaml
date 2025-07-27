@@ -1040,6 +1040,8 @@ module.exports = grammar({
       $.object_copy_expression,
       $.method_invocation,
       $.object_expression,
+      $.metaocaml_bracket_expression,
+      $.metaocaml_escape_expression,
       $.parenthesized_expression,
       $.ocamlyacc_value,
       $._extension,
@@ -1490,6 +1492,24 @@ module.exports = grammar({
         'end',
       ),
       parenthesize(field('expression', $._sequence_expression)),
+    ),
+
+    metaocaml_bracket_expression: $ => seq(
+      '.<',
+      field('expression', $._sequence_expression),
+      '>.',
+    ),
+
+    metaocaml_escape_expression: $ => choice(
+      seq(
+        '.~(',
+        field('expression', $._sequence_expression),
+        ')',
+      ),
+      prec.right(seq(
+        '.~',
+        field('expression', $._simple_expression)
+      ))
     ),
 
     ocamlyacc_value: $ => /\$[0-9]+/,
@@ -2110,7 +2130,7 @@ module.exports = grammar({
     type_variable: $ => seq(/'/, choice($._lowercase_identifier, $._uppercase_identifier)),
     tag: $ => seq(/`/, choice($._lowercase_identifier, $._uppercase_identifier)),
     attribute_id: $ => sep1(/\./, choice(
-      reserved('attribute_id', $._lowercase_identifier),
+      // reserved('attribute_id', $._lowercase_identifier),
       $._uppercase_identifier,
     )),
   },

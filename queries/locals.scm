@@ -8,6 +8,8 @@
   (method_definition)
   (fun_expression)
   (object_expression)
+  (metaocaml_bracket_expression)
+  (metaocaml_escape_expression)
   (for_expression)
   (match_case)
   (attribute_payload)

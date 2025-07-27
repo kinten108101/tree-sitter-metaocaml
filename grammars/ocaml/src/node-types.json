@@ -716,6 +716,14 @@
         "named": true
       },
       {
+        "type": "metaocaml_bracket_expression",
+        "named": true
+      },
+      {
+        "type": "metaocaml_escape_expression",
+        "named": true
+      },
+      {
         "type": "method_invocation",
         "named": true
       },
@@ -3818,6 +3826,42 @@
     }
   },
   {
+    "type": "metaocaml_bracket_expression",
+    "named": true,
+    "fields": {
+      "expression": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_sequence_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "metaocaml_escape_expression",
+    "named": true,
+    "fields": {
+      "expression": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_sequence_expression",
+            "named": true
+          },
+          {
+            "type": "_simple_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "method_definition",
     "named": true,
     "fields": {
@@ -5820,6 +5864,18 @@
     "named": false
   },
   {
+    "type": ".<",
+    "named": false
+  },
+  {
+    "type": ".~",
+    "named": false
+  },
+  {
+    "type": ".~(",
+    "named": false
+  },
+  {
     "type": ":",
     "named": false
   },
@@ -5857,6 +5913,10 @@
   },
   {
     "type": ">",
+    "named": false
+  },
+  {
+    "type": ">.",
     "named": false
   },
   {

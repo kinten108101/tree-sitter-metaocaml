@@ -4966,6 +4966,14 @@
         },
         {
           "type": "SYMBOL",
+          "name": "metaocaml_bracket_expression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "metaocaml_escape_expression"
+        },
+        {
+          "type": "SYMBOL",
           "name": "parenthesized_expression"
         },
         {
@@ -7369,6 +7377,74 @@
               "value": ")"
             }
           ]
+        }
+      ]
+    },
+    "metaocaml_bracket_expression": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": ".<"
+        },
+        {
+          "type": "FIELD",
+          "name": "expression",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_sequence_expression"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ">."
+        }
+      ]
+    },
+    "metaocaml_escape_expression": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ".~("
+            },
+            {
+              "type": "FIELD",
+              "name": "expression",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_sequence_expression"
+              }
+            },
+            {
+              "type": "STRING",
+              "value": ")"
+            }
+          ]
+        },
+        {
+          "type": "PREC_RIGHT",
+          "value": 0,
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": ".~"
+              },
+              {
+                "type": "FIELD",
+                "name": "expression",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_simple_expression"
+                }
+              }
+            ]
+          }
         }
       ]
     },
@@ -11207,14 +11283,6 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "RESERVED",
-              "content": {
-                "type": "SYMBOL",
-                "name": "_lowercase_identifier"
-              },
-              "context_name": "attribute_id"
-            },
-            {
               "type": "SYMBOL",
               "name": "_uppercase_identifier"
             }
@@ -11232,14 +11300,6 @@
               {
                 "type": "CHOICE",
                 "members": [
-                  {
-                    "type": "RESERVED",
-                    "content": {
-                      "type": "SYMBOL",
-                      "name": "_lowercase_identifier"
-                    },
-                    "context_name": "attribute_id"
-                  },
                   {
                     "type": "SYMBOL",
                     "name": "_uppercase_identifier"

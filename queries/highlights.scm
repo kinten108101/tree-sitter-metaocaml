@@ -11,6 +11,7 @@
 (object_type ["<" ">"] @punctuation.bracket)
 
 "%" @punctuation.special
+".~" @punctuation.special
 
 (attribute ["[@" "]"] @punctuation.special)
 (item_attribute ["[@@" "]"] @punctuation.special)
@@ -19,6 +20,8 @@
 (item_extension ["[%%" "]"] @punctuation.special)
 (quoted_extension ["{%" "}"] @punctuation.special)
 (quoted_item_extension ["{%%" "}"] @punctuation.special)
+(metaocaml_bracket_expression [".<" ">."] @punctuation.special)
+(metaocaml_escape_expression [".~(" ")"] @punctuation.special)
 
 ; Keywords
 ;---------
