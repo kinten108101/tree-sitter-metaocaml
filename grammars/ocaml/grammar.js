@@ -2130,7 +2130,7 @@ module.exports = grammar({
     type_variable: $ => seq(/'/, choice($._lowercase_identifier, $._uppercase_identifier)),
     tag: $ => seq(/`/, choice($._lowercase_identifier, $._uppercase_identifier)),
     attribute_id: $ => sep1(/\./, choice(
-      // reserved('attribute_id', $._lowercase_identifier),
+      reserved('attribute_id', $._lowercase_identifier),
       $._uppercase_identifier,
     )),
   },
