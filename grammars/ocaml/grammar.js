@@ -1934,6 +1934,7 @@ module.exports = grammar({
     quoted_string: $ => seq('{', $._quoted_string, '}'),
 
     _quoted_string: $ => seq(
+      optional(seq('%', $.attribute_id)),
       $._left_quoted_string_delimiter,
       optional($.quoted_string_content),
       $._right_quoted_string_delimiter,
