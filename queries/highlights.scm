@@ -8,10 +8,6 @@
 
 ["[" "]" "{" "}" "[|" "|]" "[<" "[>"] @punctuation.bracket
 
-(parenthesized_pattern ["(" ")"] @punctuation.bracket)
-
-(tuple_expression ["(" ")"] @punctuation.bracket)
-
 (object_type ["<" ">"] @punctuation.bracket)
 
 "%" @punctuation.special
