@@ -22,8 +22,8 @@
 (item_extension ["[%%" "]"] @punctuation.special)
 (quoted_extension ["{%" "}"] @punctuation.special)
 (quoted_item_extension ["{%%" "}"] @punctuation.special)
-(metaocaml_bracket_expression [".<" ">."] @punctuation.special)
-(metaocaml_escape_expression [".~(" ")"] @punctuation.special)
+(metaocaml_bracket_expression [".<" ">."] @punctuation.paren)
+(metaocaml_escape_expression [".~(" ")"] @punctuation.paren)
 
 ; Keywords
 ;---------
