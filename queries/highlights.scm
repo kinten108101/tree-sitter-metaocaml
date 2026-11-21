@@ -1,9 +1,6 @@
 ; Punctuation
 ;------------
 
-
-(unit) @constant
-
 [
   "," "." ";" ":" "=" "|" "~" "?" "+" "-" "!" ">" "&"
   "->" ";;" ":>" "+=" ":=" ".."
@@ -11,7 +8,7 @@
 
 ["[" "]" "[|" "|]" "[<" "[>"] @punctuation.bracket
 
-["(" ")" "{" "}"] @punctuation.paren
+; ["(" ")" "{" "}"] @punctuation.paren
 
 (object_type ["<" ">"] @punctuation.bracket)
 
@@ -70,6 +67,8 @@
 ;----------
 
 (boolean) @constant
+
+(unit) @constant
 
 [(number) (signed_number)] @number
 
