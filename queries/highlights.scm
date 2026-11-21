@@ -1,6 +1,9 @@
 ; Punctuation
 ;------------
 
+
+(unit) @constant
+
 [
   "," "." ";" ":" "=" "|" "~" "?" "+" "-" "!" ">" "&"
   "->" ";;" ":>" "+=" ":=" ".."
@@ -67,8 +70,6 @@
 ;----------
 
 (boolean) @constant
-
-(unit) @constant
 
 [(number) (signed_number)] @number
 
